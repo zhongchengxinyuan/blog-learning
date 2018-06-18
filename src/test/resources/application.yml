@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: blog
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+  datasource:
+    url: jdbc:mysql://localhost/blog
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
