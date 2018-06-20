@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping("login")
 public class LoginController {
@@ -18,9 +20,10 @@ public class LoginController {
     private UserService userService;
 
     @PostMapping
-    public ResponsePayload login(@RequestBody LoginReqPayload payload){
+    public ResponsePayload login(HttpServletRequest request, @RequestBody LoginReqPayload payload){
         User user = userService.validate(payload.getUsername(), payload.getPassword());
         if(user != null){
+            request.getSession().setAttribute("userId", user.getId());
             return ResponsePayload.build().setData(user);
         }else{
             return ResponsePayload.build().setCode("0101").setMessage("Login failed");

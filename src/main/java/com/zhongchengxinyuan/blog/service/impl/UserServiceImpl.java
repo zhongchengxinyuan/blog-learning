@@ -17,4 +17,14 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findByUsername(username);
         return (user != null && user.getPassword().equals(password)) ? user : null;
     }
+
+    @Override
+    public User query(Long userId) {
+        return userRepository.findById(userId).get();
+    }
+
+    @Override
+    public Long save(User user) {
+        return userRepository.save(user).getId();
+    }
 }

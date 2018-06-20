@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>显示用户信息</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/user.js"></script>
+    <style>
+        body{
+            text-align: center; /*让div内部文字居中*/
+            background-color: #fff;
+            border-radius: 20px;
+            width: 300px;
+            height: 350px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <table>
+        <th colspan="2" align="center">用户信息</th>
+        <tr>
+            <td>用户名</td><td><input name="username"/></td>
+        </tr>
+        <tr>
+            <td>密 码</td><td><input name="password"/></td>
+        </tr>
+        <tr>
+            <td>性别</td><td>
+            <select name="gender">
+                <option value="MALE">男</option>
+                <option value="FEMALE">女</option>
+            </select>
+        </td>
+        </tr>
+        <tr>
+            <td>昵称</td><td><input name="nickname"/></td>
+        </tr>
+        <tr>
+            <td>头像</td><td><input name="avatar"/></td>
+        </tr>
+        <tr>
+            <td>出生日期</td><td><input name="birthDate"/></td>
+        </tr>
+        <tr>
+            <td>手机号码</td><td><input name="phoneNumber"/></td>
+        </tr>
+        <tr>
+            <td>地址</td><td><input name="address"/></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><button id="login">确定</button></td>
+        </tr>
+    </table>
+</div>
+</body>
+
+<footer>
+</footer>
+</html>

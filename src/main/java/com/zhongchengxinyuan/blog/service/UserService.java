@@ -6,4 +6,7 @@ public interface UserService {
 
     User validate(String username, String password);
 
+    User query(Long userId);
+
+    Long save(User user);
 }

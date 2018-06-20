@@ -12,6 +12,7 @@ $(function(){
                     success: function (data) {
                         if(data.code == "0000"){
                             alert("登录成功" + "\n" + JSON.stringify(data.data.nickname));
+                            window.location.href="/user.html";
                         }else{
                             alert("登录失败");
                         }
