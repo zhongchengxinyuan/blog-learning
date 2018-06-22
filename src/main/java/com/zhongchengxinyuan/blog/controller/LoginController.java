@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("login")
+@RequestMapping("/login")
 public class LoginController {
 
     @Autowired
     private UserService userService;
 
-    @PostMapping
+    @PostMapping("/login")
     public ResponsePayload login(HttpServletRequest request, @RequestBody LoginReqPayload payload){
         User user = userService.validate(payload.getUsername(), payload.getPassword());
         if(user != null){
